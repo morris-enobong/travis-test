@@ -1,9 +1,12 @@
+language: ruby
+rvm:
+ - 2.2
+ - jruby
 sudo: require
 services:
   - docker
 
 before_install:
-  - gem install bundler
   - docker build -t moreno/testtravis -f Dockerfile.dev .
  
 
