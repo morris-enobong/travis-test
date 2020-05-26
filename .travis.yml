@@ -1,0 +1,11 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t moreno/testtravis -f Dockerfile.dev .
+
+script:
+
+  - docker run moreno/testtravis npm run test -- --coverage
