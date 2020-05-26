@@ -3,6 +3,9 @@ services:
 
 before_install:
   - docker build -t moreno/testtravis -f Dockerfile.dev .
+ - echo "BEFORE INSTALL START"
+  - gem install bundler
+  - echo "BEFORE INSTALL END"
 
 script:
 
