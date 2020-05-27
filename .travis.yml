@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t moreno/travis -f Dockerfile.dev
+  - docker build -t moreno/travis -f Dockerfile.dev .
   - docker run -d -p 127.0.0.1:80:4567 moreno/travis /bin/sh -c "cd /root/Morris; bundle exec foreman start;"
   - docker ps -a
   - docker run moreno/travis /bin/sh -c "cd /root/Morris; bundle exec rake test"
