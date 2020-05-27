@@ -1,7 +1,14 @@
 language: ruby
 rvm:
- - 2.2
- - jruby
+  - 2.2
+  - 2.3.6
+  - 2.4.3
+  - 2.5.0
+  - jruby
+
+gemfile:
+  - gemfiles/rails_4_2.gemfile
+
 sudo: true
 services:
   - docker
