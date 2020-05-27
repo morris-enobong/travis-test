@@ -1,25 +1,15 @@
 language: ruby
-rvm:
-  - 2.2
-  - 2.3.6
-  - 2.4.3
-  - 2.5.0
-  - jruby
 
-gemfile:
-  - gemfiles/rails_4_2.gemfile
-
-sudo: true
 services:
   - docker
 
 before_install:
   - docker build -t moreno/testtravis -f Dockerfile.dev .
-  - gem update --system
-  - gem install bundler -v 1.16.1
+  
 
  
 
 script:
 
   - docker run moreno/testtravis npm run test -- --coverage
+  - bundle exec rake test
